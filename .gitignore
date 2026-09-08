@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.reference.jpg
+*-input.json
+*-result.json
+.env

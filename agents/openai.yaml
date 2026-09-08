@@ -1,0 +1,4 @@
+interface:
+  display_name: "Photo Material Intervention"
+  short_description: "Source-specific photography and handmade-media art direction"
+  default_prompt: "Analyze my photograph, remove genuine obstructions only if necessary, then create one source-specific mixed-media intervention with a strong photographic anchor and a motion concept."
