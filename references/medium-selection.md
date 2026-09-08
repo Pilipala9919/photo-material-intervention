@@ -27,12 +27,26 @@ Do not stack medium names to simulate originality.
 
 ## Intervention scale
 
-- 5–15%: poetic discovery; usually weak for short-form social unless motion carries it.
-- 20–40%: balanced editorial intervention.
-- 40–70%: high-impact transformation; require a strong photographic anchor.
-- over 70%: usually becomes style transfer; justify explicitly.
+Judge scale against both the frame and the **subject**, not only total pixels.
 
-For Douyin-first work, default to 35–65% with one unmistakable preserved anchor.
+- 5–15% of frame: detail accent; rarely sufficient for a dominant subject.
+- 20–40%: balanced intervention for scenes with several independent subjects.
+- 40–70%: high-impact transformation with a clear photographic counterweight.
+- over 70%: valid when one large coherent subject occupies most of the frame and its whole form needs one medium.
+
+### Architecture cohesion rule
+
+When a building is the dominant subject, preserve its architectural unity:
+
+- transform 70–100% of the visible building body by default;
+- route the boundary around the building silhouette, a complete facade plane, or a complete spatial layer;
+- keep sky, vegetation, people, ground, reflections, or other context photographic as the counterweight;
+- do not split one coherent facade horizontally into an upper style and lower photograph unless a real construction seam, restoration layer, damage boundary, or light event makes that split meaningful;
+- protect text by restoring or deterministically transforming its original pixels, not by leaving arbitrary photographic rectangles or accepting generated glyphs.
+
+Large subject coverage is not a generic whole-image filter when the medium follows the exact subject mask, geometry, component rhythm, and perspective of this specific building.
+
+For Douyin-first work, ensure the transformed subject is unmistakable at 360 px width.
 
 ## Source-specificity test
 

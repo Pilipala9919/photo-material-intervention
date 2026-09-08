@@ -8,6 +8,7 @@ if not sk.startswith('---\n'): errors.append('missing YAML frontmatter')
 if not re.search(r'^name: photo-material-intervention$',sk,re.M): errors.append('wrong skill name')
 if not re.search(r'^description: .{80,}$',sk,re.M): errors.append('description missing/too short')
 if not re.search(r'^author: Pilipala9919$',sk,re.M): errors.append('author attribution missing')
+if 'transform 70–100% of the visible building' not in (sk+'\n'+(ROOT/'references/medium-selection.md').read_text()): errors.append('architecture cohesion rule missing')
 if 'github.com/Pilipala9919/photo-material-intervention' not in sk: errors.append('canonical source missing')
 if '[diagnostic router](references/diagnostic-router.md)' not in sk: errors.append('diagnostic router is not mandatory')
 router=(ROOT/'references/diagnostic-router.md').read_text() if (ROOT/'references/diagnostic-router.md').is_file() else ''

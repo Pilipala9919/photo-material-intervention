@@ -1,6 +1,6 @@
 ---
 name: photo-material-intervention
-version: 1.4.0
+version: 1.4.1
 author: Pilipala9919
 homepage: https://github.com/Pilipala9919/photo-material-intervention
 license: CC-BY-4.0
@@ -54,7 +54,7 @@ Use [medium selection](references/medium-selection.md). Category is a starting p
 | Source priority | Strong candidates | Useful source boundary/action |
 |---|---|---|
 | face, body, relationship | charcoal, pastel, colored pencil, embroidery, monotype | gaze, touch, silhouette, motion, clothing edge |
-| architecture, heritage | woodcut, linocut, jiehua/architectural line drawing, etching, blueprint | eave, arch, facade plane, perspective grid, light/shadow |
+| architecture, heritage | woodcut, linocut, jiehua/architectural line drawing, etching, blueprint | complete building silhouette, complete facade plane, arch, perspective grid, light/shadow |
 | landscape, weather | ink wash, watercolor, monotype, cyanotype, charcoal | fog line, horizon, rain, reflection, snow, wind |
 | street, crowd, transport | risograph, screenprint, stencil, stamping, sequential drawing | trajectory, repetition, crossing, signage rhythm |
 | object, craft, food | gouache, colored pencil, technical drawing, cut-paper, relief print | cut, fold, wear, steam, reflection, material seam |
@@ -79,7 +79,7 @@ Valid: “Along the real eave curve, the upper roof recedes from photography int
 
 Invalid: “Make the building ink style.”
 
-The transformed domain should usually occupy 30–65% for social viewing. Do not place a floating sheet, frame, portal, or decorative overlay unless that object already exists or physical contact is essential and unmistakable.
+The transformed domain should usually occupy 30–65% for social viewing. When one building is the dominant subject, transform 70–100% of the visible building as one coherent body and keep environment as the photographic anchor; do not split a facade into arbitrary upper/lower treatments. Do not place a floating sheet, frame, portal, or decorative overlay unless that object already exists or physical contact is essential and unmistakable.
 
 ### 4. Protect source truth
 

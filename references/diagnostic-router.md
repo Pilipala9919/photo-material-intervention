@@ -82,15 +82,16 @@ If several media pass, choose the one with the clearest physical boundary and lo
 For a sharply visible facade with layered flying eaves, dense brackets, circular windows and protected calligraphy:
 
 ```yaml
-chosen_medium: jiehua / precise architectural line drawing
-ground: aged silk or warm mineral-paper tone within the transformed region
-photo_anchor: lower facade, plaque, couplets, windows, lion and courtyard
-transition_boundary: the actual sweeping line of the middle eave
-event_sentence: "Along the real eave curve, the upper roof recedes from photography into its own ruled construction drawing."
+chosen_medium: precise architectural etching / jiehua line drawing
+photo_anchor: sky, trees and garden context
+transformed_domain: 70–100% of the complete visible building body
+ground: warm mineral-paper tone clipped to the building silhouette
+transition_boundary: the complete outer building silhouette and ground-contact edge
+event_sentence: "The whole temple becomes a single measured architectural plate while its living garden remains photographic."
 route: DIRECT_ART
 ```
 
-This is preferable to a floating rubbing because architectural geometry itself carries the transformation.
+This is preferable to a floating rubbing or a horizontal half-photo/half-drawing split because the building remains one coherent subject.
 
 ## Time budget
 
