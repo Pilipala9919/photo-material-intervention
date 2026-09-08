@@ -1,116 +1,131 @@
 ---
 name: photo-material-intervention
-version: 1.3.0
+version: 1.4.0
 author: Pilipala9919
 homepage: https://github.com/Pilipala9919/photo-material-intervention
 license: CC-BY-4.0
-description: Diagnose a real photograph and choose the smallest effective treatment—hold, photographic edit, cleanup, narrative transformation, or source-specific material intervention—according to its subject, scene, emotional asset, visual problem, fidelity risk, and publishing goal. Use when a user wants a strong photo treatment without preset filters, especially for people, architecture, landscape, street scenes, objects, cultural heritage, or social-media concepts.
+description: Transform a real photograph through one subject-appropriate visual medium—such as printmaking, architectural line drawing, charcoal, watercolor, gouache, risograph, embroidery, collage, or ink—after diagnosing the scene, subject, geometry, emotional asset, and fidelity risks. Use when the user wants visibly artistic photo treatment rather than ordinary retouching or a generic whole-image filter.
 ---
 
 # Photo Material Intervention
 
 > Original methodology by **Pilipala9919** · [canonical repository](https://github.com/Pilipala9919/photo-material-intervention) · documentation under [CC BY 4.0](LICENSE).
 
-Decide **what this photograph needs before deciding how it should look**. The goal is not to add art. The goal is to strengthen the photograph's subject, feeling, story, or visual event with the least unnecessary invention.
+Choose an artistic medium **from the photograph**, not before it. Produce a visible transformation, not ordinary retouching and not a style filter applied uniformly to every image.
 
-## Non-negotiable rule
+## Required outcome
 
-Never add a filter, paper, ink, frame, drawing, portal, glow, or other device merely because the image contains an empty area or recognizable object. A treatment is valid only when it reveals or intensifies a relationship already present in the source.
+A successful result must have:
+
+1. a recognizable photographic anchor;
+2. one dominant handmade or print medium;
+3. a transition boundary derived from source geometry, light, weather, motion, depth, or subject contact;
+4. a visible event understandable at phone size;
+5. treatment specific to this subject and scene.
+
+If the user invokes this Skill for processing, `PHOTO_PREP` alone is never the final deliverable. It may be skipped or used briefly before artistic transformation.
 
 ## Fast workflow
 
-### 1. Diagnose once
+### 1. Diagnose and route once
 
-Read [diagnostic router](references/diagnostic-router.md). Identify only:
+Read [diagnostic router](references/diagnostic-router.md). State concisely:
 
-- **subject** — the person, relationship, place, action, object, or atmosphere that matters;
-- **asset** — emotion, gesture, structure, weather, light, texture, use, memory, or coincidence;
-- **problem** — technical weakness, distraction, obstruction, weak hierarchy, absent tension, or none;
-- **risk** — identity, text, architecture, cultural evidence, hidden geometry, or object count;
-- **goal** — faithful photograph, personal memory, art image, or social reach.
+- subject and strongest visual asset;
+- anchors and risks;
+- chosen medium;
+- source-derived transition boundary;
+- one-sentence visual event.
 
-Show the user a compact diagnosis and select exactly one route:
+Choose one route:
 
-- `HOLD` — no edit is justified;
-- `PHOTO_EDIT` — tonal, color, crop, perspective, or hierarchy correction only;
-- `CLEANUP` — remove one genuine distraction or obstruction;
-- `NARRATIVE_TRANSFORM` — create one source-derived event that changes how the scene is read;
-- `MATERIAL_TRANSFORM` — use one physical medium because the photographed surface or condition naturally causes it;
-- `ASK` — one focused question is necessary for safety or subject choice.
+- `DIRECT_ART` — source is ready for one artistic transformation;
+- `CLEAN_THEN_ART` — one genuine obstruction must be removed first;
+- `PREP_THEN_ART` — a severe technical defect prevents reliable transformation;
+- `ASK` — subject choice or fidelity risk requires one focused question;
+- `DECLINE` — no responsible edit is possible from the supplied file.
 
-Do not perform a preparation pass unless a technical defect actually prevents the subject from reading.
+Do not end at cleanup or photographic correction when the user asked to use this Skill.
 
-### 2. Pass the meaning and reach gate
+### 2. Select medium by subject and structure
 
-Before any generative edit, answer:
+Use [medium selection](references/medium-selection.md). Category is a starting point, not a preset:
 
-1. What is already worth looking at?
-2. What single visible event will make it more meaningful or surprising?
-3. Why does that event belong to this exact photograph?
-4. Why would someone stop, feel, wonder, or share?
+| Source priority | Strong candidates | Useful source boundary/action |
+|---|---|---|
+| face, body, relationship | charcoal, pastel, colored pencil, embroidery, monotype | gaze, touch, silhouette, motion, clothing edge |
+| architecture, heritage | woodcut, linocut, jiehua/architectural line drawing, etching, blueprint | eave, arch, facade plane, perspective grid, light/shadow |
+| landscape, weather | ink wash, watercolor, monotype, cyanotype, charcoal | fog line, horizon, rain, reflection, snow, wind |
+| street, crowd, transport | risograph, screenprint, stencil, stamping, sequential drawing | trajectory, repetition, crossing, signage rhythm |
+| object, craft, food | gouache, colored pencil, technical drawing, cut-paper, relief print | cut, fold, wear, steam, reflection, material seam |
+| plant, animal | botanical drawing, drypoint, watercolor, paper cut | vein, fur/feather flow, branch rhythm, silhouette |
 
-For social-reach work, all four answers must be concrete. If question 3 or 4 has no convincing answer, choose `HOLD` or `PHOTO_EDIT`. Do not generate a decorative concept to fill the gap.
+Never choose only because a medium is culturally associated with the subject. Verify that its mark-making behavior matches visible structure.
 
-A static scene is not automatically a transformation candidate. Architecture without human use, temporal contrast, weather tension, unusual scale, or a source-native action is usually documentary photography—not a canvas for an attached art object.
+### 3. Design an event, not a filter
 
-### 3. Execute the selected route
+Define:
 
-#### `HOLD`
+```yaml
+photo_anchor: ""
+medium: ""
+transition_boundary: ""
+physical_action: ""
+transformed_domain: ""
+event_sentence: ""
+```
 
-Explain in one sentence why restraint protects the image. Do not create a concept image.
+Valid: “Along the real eave curve, the upper roof recedes from photography into a ruled architectural drawing.”
 
-#### `PHOTO_EDIT`
+Invalid: “Make the building ink style.”
 
-Use non-generative or tightly locked corrections. Preserve identity, text, object count, geometry, weather, and meaningful imperfections. Stop after one accepted edit.
+The transformed domain should usually occupy 30–65% for social viewing. Do not place a floating sheet, frame, portal, or decorative overlay unless that object already exists or physical contact is essential and unmistakable.
 
-#### `CLEANUP`
+### 4. Protect source truth
 
-Read [obstruction removal](references/obstruction-removal.md). Remove only an element with high obstruction cost and low narrative value. Use one clean-base generation, inspect reconstruction, and stop unless the user also requested transformation. Never hide reconstruction under style.
+Lock faces, bodies, text, logos, artwork, architecture count, landmark geometry, and culturally significant details. If the artistic region would cross protected text, keep that text as original photographic pixels or route the boundary around it.
 
-#### `NARRATIVE_TRANSFORM`
+For substantial obstruction removal, read [obstruction removal](references/obstruction-removal.md). Never claim inferred pixels are restored truth.
 
-Change one relationship rather than the whole style. Valid mechanisms include light revealing a subject, weather erasing or exposing distance, a reflection disagreeing with reality, motion leaving source-shaped evidence, scale becoming legible, or foreground and background exchanging information. Preserve at least one strong photographic anchor.
+### 5. Generate once
 
-#### `MATERIAL_TRANSFORM`
+Read [prompt compiler](references/prompt-compiler.md). Make one deliberate generation, not a style sampler. Default budget: **one diagnosis, one medium decision, one generation, and at most one local repair**.
 
-Read [medium selection](references/medium-selection.md) and [prompt compiler](references/prompt-compiler.md). Use only when a real source condition physically motivates a process: rain can transfer, fog can erase, sunlight can expose, a painted edge can hand off, and a portal can separate. Recipes are optional evidence, never defaults.
+```yaml
+diagnosis: 1
+concept: 1
+generation: 1
+local_repair: at_most_1
+```
 
-### 4. Generate once, then judge
+A local repair may restore protected source pixels or fix one boundary artifact. It may not replace the concept. Ask before exceeding the budget.
 
-Compile one concept and make one generation. Read [quality gate](references/quality-gate.md).
+### 6. Judge
 
-- One local execution defect → allow one local repair.
-- Altered identity, text, architecture, or documentary evidence → reject.
-- Weak concept, generic effect, or no sharing reason → stop and explain; do not keep generating variations.
+Read [quality gate](references/quality-gate.md). Reject if:
 
-Default budget: **one diagnosis, one strategy, one generation, at most one local repair**. Ask before exceeding it.
+- it reads as ordinary retouching;
+- the whole photo receives one uniform filter;
+- the medium could be swapped onto unrelated photos unchanged;
+- the transformation is too small to read;
+- a decorative object carries the idea instead of the photographed subject;
+- protected identity, text, or structure changes accidentally.
 
-### 5. Add motion only when the still works
+Only after the still succeeds, read [motion design](references/motion-design.md) when motion is requested.
 
-For requested social content, read [motion design](references/motion-design.md). Animate the source-derived action, not a generic before/after dissolve.
+## Recipes
 
-## Subject-specific priorities
+Recipes are examples, not the whole system:
 
-| Source type | Protect first | Prefer | Usually avoid |
-|---|---|---|---|
-| person / relationship | face, body, gesture, distance | emotion, interaction, light, motion evidence | transforming identity or decorating empty background |
-| architecture / heritage | geometry, text, patina, use | structure, scale, human passage, time/light/weather | floating paper, generic ink, fantasy ornament |
-| landscape / weather | horizon, terrain, atmosphere | visibility, season, water, wind, light as action | unrelated objects or total style transfer |
-| street / crowd | timing, count, gesture, coincidence | rhythm, trails, repeated action, selective hierarchy | beautifying away useful disorder |
-| object / still life / food | form, function, texture | use, wear, cut, reflection, material response | arbitrary surrealism unrelated to the object |
-| text / sign / artwork | exact content and authorship | documentary correction or non-text surroundings | any generative redraw of protected content |
+- [Portal Woodcut](references/recipes/portal-woodcut.md)
+- [Paint-Stop Charcoal](references/recipes/paint-stop-charcoal.md)
+- [Sunlight Screenprint](references/recipes/sunlight-screenprint.md)
+
+Invent a new mechanism whenever subject, structure, and medium demand it. Do not force a Recipe match.
 
 ## Delivery
 
-Return only:
-
-1. route and one-sentence reason;
-2. accepted output, if an edit was justified;
-3. what was preserved, removed, or inferred;
-4. one important limitation;
-5. optional motion idea only when requested.
-
-Never present a technically polished but conceptually weak image as successful.
+Return the accepted artwork, diagnosis, event sentence, preservation disclosure, and one important limitation. Do not deliver a photo-only correction as the finished use of this Skill.
 
 ## Attribution and privacy
 

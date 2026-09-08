@@ -2,94 +2,96 @@
 
 > Part of Photo Material Intervention · original methodology by [Pilipala9919](https://github.com/Pilipala9919/photo-material-intervention) · CC BY 4.0.
 
-Use vision to understand the actual photograph. `scripts/inspect_image.py` reports geometry only; it cannot identify subject or meaning.
+Use vision to choose a subject-specific artistic treatment. Technical inspection cannot identify meaning or medium.
 
-## Compact record
+## Compact diagnosis
 
 ```yaml
 subject: ""
-asset: ""
-problem: none | technical | distraction | obstruction | weak-hierarchy | absent-tension | ambiguous
-risk: []
-goal: faithful-photo | memory | art | social-reach
-route: HOLD | PHOTO_EDIT | CLEANUP | NARRATIVE_TRANSFORM | MATERIAL_TRANSFORM | ASK
+visual_asset: ""
+anchors_to_lock: []
+risks: []
+medium_candidates: []
+chosen_medium: ""
+medium_reason: ""
+transition_boundary: ""
+event_sentence: ""
+route: DIRECT_ART | CLEAN_THEN_ART | PREP_THEN_ART | ASK | DECLINE
 confidence: 0.0
-reason: ""
-next_action: ""
 ```
 
-Show this record in natural language before the first tool call. Separate visible observation from inference.
+Show a short natural-language version before editing.
 
-## Decision order
+## Route
 
-### 1. `ASK`
+- `DIRECT_ART`: source subject and geometry are readable; generate the selected treatment.
+- `CLEAN_THEN_ART`: a genuine low-value obstruction blocks the subject. Remove it conservatively, verify, then use the already-selected artistic direction.
+- `PREP_THEN_ART`: only for severe exposure, color, crop, or perspective defects that prevent visual understanding. Preparation is not a final output.
+- `ASK`: confidence below 0.75, competing subjects imply incompatible work, or a person/protected text/artwork/cultural detail may be altered.
+- `DECLINE`: resolution, corruption, or unsupported reconstruction makes responsible treatment impossible.
 
-Use only when confidence is below 0.75, two subjects imply incompatible edits, or treatment may alter a person, protected text/artwork, cultural evidence, or unreconstructable hidden geometry. Ask one focused question with at most two concrete options.
+## Subject-to-medium reasoning
 
-### 2. `HOLD`
+Choose by both subject and mark affinity:
 
-Use when the photograph is already resolved or when no edit would strengthen its subject, feeling, story, or visual hierarchy. Also use when a proposed transformation has no source-specific cause or sharing reason.
+### Person / relationship
 
-### 3. `PHOTO_EDIT`
+Prioritize gesture, gaze, touch, distance, posture, clothing and motion. Use charcoal for weight and absence; pastel/pencil for intimacy; monotype for memory or doubling; embroidery when seams, clothing or connection lines physically support it. Preserve faces and bodies photographically unless the user explicitly requests portrait transformation.
 
-Use when exposure, color, crop, perspective, noise, or local hierarchy is the real limitation. It is a final route, not automatically preparation for art. Prefer deterministic editing over generative redraw.
+### Architecture / heritage
 
-### 4. `CLEANUP`
+Prioritize geometry, construction logic, age, scale, light and use. Use:
 
-Use when one element has high visual weight and obstruction cost, low subject/story value, and conservatively reconstructable surroundings. Do not remove useful mess or documentary evidence. After cleanup, stop unless transformation was explicitly requested and still has a valid meaning/reach case.
+- woodcut/linocut for strong mass, silhouette and carved rhythm;
+- jiehua or technical line drawing for layered roofs, perspective and construction order;
+- etching/drypoint for dense ornament and weathered surface;
+- blueprint only when construction, restoration or plan/elevation logic is visible.
 
-### 5. `NARRATIVE_TRANSFORM`
+Route boundaries along eaves, arches, facade planes, perspective axes or real shadows. Lock text and culturally significant ornament. Do not add generic rice paper, floating prints or fantasy decoration.
 
-Use when a visible source relationship supports a surprising event without requiring a handmade-medium metaphor. The event must change how the scene is read and remain describable without style words.
+### Landscape / weather
 
-Examples:
+Prioritize depth, horizon, terrain, water, season and atmospheric movement. Use ink wash/watercolor for diffusion, charcoal for erasure and density, monotype for transfer/reflection, cyanotype for hard light or botanical silhouettes. Transition along fog, rain, shoreline, horizon or light—not arbitrary gradients.
 
-- a reflection shows a different moment already implied by the subject;
-- hard light reveals the path or person that the composition points toward;
-- motion leaves traces that preserve real trajectories;
-- fog erases depth while one real anchor resists it.
+### Street / crowd / transport
 
-Reject added props, floating art surfaces, decorative portals, or generic surrealism.
+Prioritize timing, repetition, crossing, trajectory and sign rhythm. Use screenprint/risograph for flat social color and registration, stencil for repeated urban forms, stamping or sequential drawing for movement. Preserve person count and protected signs.
 
-### 6. `MATERIAL_TRANSFORM`
+### Object / craft / food
 
-Use only when source matter and artistic process have physical affinity. Require a real trigger, physical verb, contact zone, preserved anchor, and one-sentence event. Finding a doorway, fog, sun, water, or texture is not sufficient by itself.
+Prioritize function, handling, wear, cut, fold, heat, steam, glaze and reflection. Use gouache for mass and color, pencil/technical drawing for construction, cut-paper for layers, relief print for texture. The transformation should emerge from a seam, cut, reflection or material change.
 
-## Subject routing
+### Plant / animal
 
-- **Person/relationship:** read gesture, gaze, distance, touch, absence, and action before background aesthetics.
-- **Architecture/heritage:** read structure, use, age, scale, passage, light, weather, and cultural text. Static documentation normally routes to `PHOTO_EDIT` or `HOLD`.
-- **Landscape/weather:** read depth, horizon, visibility, season, water and atmospheric movement.
-- **Street/crowd:** read timing, repeated rhythm, collision, direction and social evidence.
-- **Object/food:** read function, wear, surface, cut, heat, reflection and transformation of matter.
-- **Protected text/art:** lock content; do not use generative editing across it.
+Prioritize vein/branch rhythm, silhouette, fur, feather, growth and movement. Use botanical drawing, drypoint, watercolor or paper cut according to edge and texture. Preserve species-defining anatomy.
 
-## Meaning and reach gate
+## Selection checks
 
-For `NARRATIVE_TRANSFORM` or `MATERIAL_TRANSFORM`, require four concrete answers:
+A chosen medium passes only if:
+
+1. its native marks correspond to visible structure;
+2. the transition follows an existing boundary or contact;
+3. the subject—not an added decorative prop—carries the event;
+4. the treatment differs materially from what another source category would receive;
+5. the event is visible at 360 px width.
+
+If several media pass, choose the one with the clearest physical boundary and lowest fidelity risk. Do not present a style menu unless the user asks.
+
+## Example: layered heritage facade
+
+For a sharply visible facade with layered flying eaves, dense brackets, circular windows and protected calligraphy:
 
 ```yaml
-worth_seeing: ""
-visible_event: ""
-belongs_here_because: ""
-stop_or_share_because: ""
+chosen_medium: jiehua / precise architectural line drawing
+ground: aged silk or warm mineral-paper tone within the transformed region
+photo_anchor: lower facade, plaque, couplets, windows, lion and courtyard
+transition_boundary: the actual sweeping line of the middle eave
+event_sentence: "Along the real eave curve, the upper roof recedes from photography into its own ruled construction drawing."
+route: DIRECT_ART
 ```
 
-If `belongs_here_because` is merely “there is space” or “the style matches,” reject. If `stop_or_share_because` relies on an explanation rather than visible tension, reject.
+This is preferable to a floating rubbing because architectural geometry itself carries the transformation.
 
 ## Time budget
 
-Default execution budget:
-
-```yaml
-diagnoses: 1
-strategies: 1
-generations: 1
-local_repairs: 1
-```
-
-Do not repeatedly generate to rescue a weak concept. A local repair may correct masking, edge contact, or one artifact; it may not replace the strategy. Ask before exceeding the budget.
-
-## Current-photo example: static heritage facade
-
-A sunlit heritage facade with legible roof structure but no human action, weather event, temporal contrast, or source-native transformation should route to `PHOTO_EDIT` if tonal hierarchy is weak, otherwise `HOLD`. Do not attach floating xuan paper, ink, portals, or fantasy ornament merely to create novelty. Recommend a stronger source frame—human passage, ritual use, rain, shadow movement, restoration traces, or old/new contrast—if social reach is the goal.
+One diagnosis, one medium decision, one generation, and at most one source-pixel restoration or local boundary repair. Do not generate multiple styles to discover the idea.

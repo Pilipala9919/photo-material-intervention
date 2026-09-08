@@ -46,8 +46,8 @@ A valid trigger already exists in the photograph and suggests physical behavior:
 
 Reject triggers invented only after selecting a favorite style.
 
-## 5. Route instead of styling
+## 5. Route to artistic treatment
 
-Use the compact record in [diagnostic router](diagnostic-router.md). Choose one of `HOLD`, `PHOTO_EDIT`, `CLEANUP`, `NARRATIVE_TRANSFORM`, `MATERIAL_TRANSFORM`, or `ASK`.
+Use the compact record in [diagnostic router](diagnostic-router.md). Choose one of `DIRECT_ART`, `CLEAN_THEN_ART`, `PREP_THEN_ART`, `ASK`, or `DECLINE`.
 
-Do not search for a material trigger until the broader diagnosis supports `MATERIAL_TRANSFORM`. For `NARRATIVE_TRANSFORM` or `MATERIAL_TRANSFORM`, complete the meaning and reach gate before prompting. If the event is generic, decorative, or needs explanation to feel interesting, choose `HOLD` or `PHOTO_EDIT`.
+Choose the medium only after subject and structure are clear. The artistic event must be source-specific and visible without explanation. Ordinary correction may prepare a damaged source but may not replace the requested artistic result.
