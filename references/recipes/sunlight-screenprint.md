@@ -1,5 +1,7 @@
 # Recipe: Sunlight Screenprint
 
+> Part of Photo Material Intervention · original methodology by [Pilipala9919](https://github.com/Pilipala9919/photo-material-intervention) · CC BY 4.0.
+
 ## Eligibility
 
 Use when a broad receiving plane—grass, plaza, wall, fabric, road, or water—has a readable real sunlight/shadow boundary and one or more source objects provide a strong palette anchor.

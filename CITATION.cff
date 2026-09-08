@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or adapt this methodology, please cite it as below."
+title: "Photo Material Intervention"
+type: software
+authors:
+  - name: "Pilipala9919"
+    alias: "Pilipala9919"
+repository-code: "https://github.com/Pilipala9919/photo-material-intervention"
+url: "https://github.com/Pilipala9919/photo-material-intervention"
+version: "1.1.0"
+date-released: "2026-09-08"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  A source-specific Agent Skill for turning real photographs into high-impact
+  mixed-media interventions through photographic diagnosis, optional
+  obstruction removal, material routing, quality gates, and motion design.
+keywords:
+  - photography
+  - mixed media
+  - agent skill
+  - art direction
+  - generative AI

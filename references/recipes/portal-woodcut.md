@@ -1,5 +1,7 @@
 # Recipe: Portal Woodcut
 
+> Part of Photo Material Intervention · original methodology by [Pilipala9919](https://github.com/Pilipala9919/photo-material-intervention) · CC BY 4.0.
+
 ## Eligibility
 
 Use when a real doorway, window, arch, tunnel, mirror, or opening creates a strong boundary and a subject observes, enters, or stands across it.

@@ -1,5 +1,7 @@
 # Recipe: Paint-Stop Charcoal
 
+> Part of Photo Material Intervention · original methodology by [Pilipala9919](https://github.com/Pilipala9919/photo-material-intervention) · CC BY 4.0.
+
 ## Eligibility
 
 Use when real paint, coating, markings, or human-applied color visibly stops on a subject and unpainted form continues into fog, darkness, smoke, or low-detail atmosphere.

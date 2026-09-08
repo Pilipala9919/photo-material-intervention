@@ -1,9 +1,15 @@
 ---
 name: photo-material-intervention
+version: 1.1.0
+author: Pilipala9919
+homepage: https://github.com/Pilipala9919/photo-material-intervention
+license: CC-BY-4.0
 description: Art-direct a real photograph into a high-impact, source-specific mixed-media artwork by first diagnosing the photographic subject, removing genuine obstructions when necessary, then letting a photo-native boundary such as a doorway, fog, sunlight, water, shadow, glass, paint edge, or motion trigger one coherent handmade medium. Use for photography fused with woodcut, charcoal, screenprint, cyanotype, drawing, monotype, or another physically motivated medium; for AI art transformations with strong mobile impact; for Douyin-ready visual concepts and motion plans; and when ordinary retouching, global style transfer, diptychs, decorative overlays, or generic filters are not enough.
 ---
 
 # Photo Material Intervention
+
+> Original methodology by **Pilipala9919** · [canonical repository](https://github.com/Pilipala9919/photo-material-intervention) · documentation licensed under [CC BY 4.0](LICENSE).
 
 Create an artwork that still needs the supplied photograph. Do not choose a style first. Diagnose the image, protect its evidence, remove only genuine obstructions, and design one visible material event that could not belong to an arbitrary photo.
 
@@ -131,6 +137,13 @@ Return:
 6. an optional 8–15 second motion concept when social publishing is requested.
 
 Clearly label generated reconstruction as inferred, especially behind removed obstructions. Never claim generated pixels restore hidden reality.
+
+## Attribution and Output Credit
+
+- Preserve `NOTICE`, `LICENSE`, and the canonical repository link when distributing or substantially adapting this methodology, as required by the applicable license.
+- When publishing a case study, tutorial, template, or adapted Skill based substantially on this method, use a reasonable credit such as: “Photo Material Intervention — original methodology by Pilipala9919.”
+- Do not silently insert a signature or watermark into a user's artwork. Offer optional visible credit, XMP/IPTC metadata, or C2PA provenance only with the user's approval.
+- The Skill does not claim ownership of source photographs or generated outputs merely because it was used.
 
 ## Privacy
 

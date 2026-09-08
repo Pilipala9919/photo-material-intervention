@@ -1,9 +1,41 @@
-MIT License
+LICENSE SCOPE
 
-Copyright (c) 2026 photo-material-intervention contributors
+Copyright © 2026 Pilipala9919.
+Project: Photo Material Intervention
+Canonical source: https://github.com/Pilipala9919/photo-material-intervention
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+This repository uses a split license:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+1. Software code
+   Files under scripts/ and tests/ are licensed under the MIT License in
+   LICENSES/MIT.txt, unless a file explicitly states otherwise.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+2. Methodology and documentation
+   SKILL.md, agents/openai.yaml, and all files under references/ are licensed
+   under Creative Commons Attribution 4.0 International (CC BY 4.0), available
+   in LICENSES/CC-BY-4.0.txt and at
+   https://creativecommons.org/licenses/by/4.0/.
+
+3. Attribution
+   When sharing or adapting a substantial portion of the methodology or
+   documentation, give reasonable credit as follows:
+
+   "Photo Material Intervention — original methodology by Pilipala9919
+   (https://github.com/Pilipala9919/photo-material-intervention), licensed
+   under CC BY 4.0."
+
+   Changes should be identified, and attribution must not imply endorsement.
+   Under CC BY 4.0, attribution may be provided in any reasonable manner for
+   the medium and context. If technically reasonable, preserve NOTICE and a
+   link to the canonical repository.
+
+4. Outputs
+   This repository does not claim copyright over a user's source photograph
+   or over generated output merely because this Skill was used. Credit on
+   generated works is appreciated but is not required by these repository
+   licenses unless the output itself reproduces protected documentation or
+   other licensed material from this repository.
+
+SPDX expressions:
+- Code: MIT
+- Methodology/documentation: CC-BY-4.0
