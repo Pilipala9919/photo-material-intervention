@@ -11,8 +11,10 @@ if not re.search(r'^author: Pilipala9919$',sk,re.M): errors.append('author attri
 if 'github.com/Pilipala9919/photo-material-intervention' not in sk: errors.append('canonical source missing')
 if '[diagnostic router](references/diagnostic-router.md)' not in sk: errors.append('diagnostic router is not mandatory')
 router=(ROOT/'references/diagnostic-router.md').read_text() if (ROOT/'references/diagnostic-router.md').is_file() else ''
-for route in ['HOLD','PHOTO_PREP','CLEAN_BASE','DIRECT_INTERVENTION','ASK']:
+for route in ['HOLD','PHOTO_EDIT','CLEANUP','NARRATIVE_TRANSFORM','MATERIAL_TRANSFORM','ASK']:
  if route not in router: errors.append('missing diagnostic route '+route)
+for clause in ['one diagnosis, one strategy, one generation','Why would someone stop, feel, wonder, or share?']:
+ if clause not in sk: errors.append('missing efficiency/reach rule '+clause)
 for f in ['references/diagnostic-router.md','references/visual-diagnosis.md','references/obstruction-removal.md','references/medium-selection.md','references/prompt-compiler.md','references/quality-gate.md','references/motion-design.md','references/recipes/portal-woodcut.md','references/recipes/paint-stop-charcoal.md','references/recipes/sunlight-screenprint.md','scripts/inspect_image.py','scripts/create_edit_input.py','scripts/compare_output.py','agents/openai.yaml','LICENSE','LICENSES/MIT.txt','LICENSES/CC-BY-4.0.txt','NOTICE','CITATION.cff']:
  if not (ROOT/f).is_file(): errors.append('missing '+f)
 for m in re.findall(r'\]\(([^)]+\.md)\)',sk):
