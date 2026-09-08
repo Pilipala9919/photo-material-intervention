@@ -48,16 +48,20 @@ Reject triggers invented only after selecting a favorite style.
 
 ## 5. Preflight decision
 
-Before generation, output internally:
+Before generation, produce the full user-visible diagnostic record required by [diagnostic router](diagnostic-router.md), including a single route and next action. At minimum, populate:
 
 ```yaml
 subject_relationship:
 anchors_to_lock: []
+primary_problem:
 obstructions:
   remove: []
   weaken: []
   preserve: []
 clean_base_required: false
+native_triggers: []
+route: HOLD | PHOTO_PREP | CLEAN_BASE | DIRECT_INTERVENTION | ASK
+route_confidence:
 trigger:
 medium:
 action:
@@ -65,6 +69,8 @@ domain:
 contact_zone:
 event_sentence:
 risks: []
+next_action:
+success_condition:
 ```
 
-If `event_sentence` cannot be concrete and source-specific, stop and diagnose again.
+For `HOLD`, `PHOTO_PREP`, `CLEAN_BASE`, or `ASK`, leave medium-event fields blank until a later diagnosis selects `DIRECT_INTERVENTION`. If `event_sentence` cannot be concrete and source-specific, do not intervene; select `HOLD` or diagnose again.

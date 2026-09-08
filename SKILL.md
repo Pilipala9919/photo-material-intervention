@@ -1,6 +1,6 @@
 ---
 name: photo-material-intervention
-version: 1.1.0
+version: 1.2.0
 author: Pilipala9919
 homepage: https://github.com/Pilipala9919/photo-material-intervention
 license: CC-BY-4.0
@@ -26,6 +26,20 @@ A successful result must satisfy all five:
 Reject work that needs a long artist statement to become interesting.
 
 ## Required Workflow
+
+### 0. Run the diagnostic router
+
+Read [diagnostic router](references/diagnostic-router.md) before writing any edit or generation prompt. Treat the workflow as a gated state machine, not a style menu.
+
+Inspect the actual image, select exactly one route, and state the next action:
+
+- `HOLD` — preserve the photograph; do not force an art treatment;
+- `PHOTO_PREP` — make restrained photographic corrections, then diagnose again;
+- `CLEAN_BASE` — remove a genuine obstruction in a separate documentary stage, inspect it, then diagnose again;
+- `DIRECT_INTERVENTION` — compile a source-specific material event;
+- `ASK` — pause for one focused clarification because subject choice, reconstruction, identity, or evidence is unsafe or genuinely ambiguous.
+
+Before the first edit, show a concise diagnosis and route. Continue automatically when confidence and safety permit; stop after diagnosis when the user asks for diagnosis only. Never jump from source image to a favored Recipe.
 
 ### 1. Inspect before prompting
 
@@ -81,6 +95,8 @@ Use a verified recipe only when its eligibility conditions match:
 - [Portal Woodcut](references/recipes/portal-woodcut.md) — a real doorway/window/arch divides the photographic observer from a transformed exterior or interior.
 - [Paint-Stop Charcoal](references/recipes/paint-stop-charcoal.md) — real applied color ends on a subject and fog/darkness continues it in monochrome drawing; supports a clean-base stage.
 - [Sunlight Screenprint](references/recipes/sunlight-screenprint.md) — a clear real light/shadow boundary turns a broad receiving plane into hand-pulled color while people or objects remain photographic.
+
+A Recipe match is valid only after the diagnostic router selects `DIRECT_INTERVENTION`. A detected doorway, fog bank, or sunlight boundary is evidence, not an automatic Recipe choice.
 
 Do not force a recipe. If none fits, create a new mechanism using the same compiler and record why it belongs to this source.
 

@@ -4,4 +4,4 @@ interface:
   homepage: "https://github.com/Pilipala9919/photo-material-intervention"
   license: "CC-BY-4.0"
   short_description: "Source-specific photography and handmade-media art direction"
-  default_prompt: "Analyze my photograph, remove genuine obstructions only if necessary, then create one source-specific mixed-media intervention with a strong photographic anchor and a motion concept."
+  default_prompt: "First inspect my photograph and show a concise diagnosis: its true subject, anchors to preserve, primary problem, confidence, and exactly one route—HOLD, PHOTO_PREP, CLEAN_BASE, DIRECT_INTERVENTION, or ASK. Then perform only that route's next safe step. Re-diagnose after photographic preparation or obstruction removal; do not choose a medium or Recipe until the router selects DIRECT_INTERVENTION."
